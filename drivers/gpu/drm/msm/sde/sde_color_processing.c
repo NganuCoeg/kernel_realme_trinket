@@ -1130,9 +1130,9 @@ exit:
 }
 
 #ifdef CONFIG_DRM_MSM_KCAL_CTRL
-static struct drm_crtc *g_pcc_crtc;
-static struct drm_property *g_pcc_property;
-static uint64_t g_pcc_val;
+struct drm_crtc *g_pcc_crtc;
+struct drm_property *g_pcc_property;
+uint64_t g_pcc_val;
 #endif
 
 int sde_cp_crtc_set_property(struct drm_crtc *crtc,
