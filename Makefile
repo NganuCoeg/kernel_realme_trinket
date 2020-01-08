@@ -692,6 +692,14 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning, int-in-bool-context)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, address-of-packed-member)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, attribute-alias)
 
+ifdef CONFIG_THINLTO
+lto-clang-flags := -flto=thin -fsplit-lto-unit
+LDFLAGS	+= --thinlto-cache-dir=.thinlto-cache
+else
+lto-clang-flags := -flto
+endif
+lto-clang-flags += -fvisibility=hidden
+
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS   += -Os
 else
