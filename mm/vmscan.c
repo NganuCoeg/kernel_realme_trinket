@@ -1722,13 +1722,8 @@ int isolate_lru_page(struct page *page)
 	int ret = -EBUSY;
 
 	VM_BUG_ON_PAGE(!page_count(page), page);
-#if defined(CONFIG_PRODUCT_REALME_TRINKET) && defined(CONFIG_PROCESS_RECLAIM)
-	/* Kui.Zhang@PSW.TEC.Kernel.Performance, 2019-01-08, Because process reclaim is doing page by
-	 * page, so there many compound pages are relcaimed, so too many warning msg on this case. */
-	WARN_RATELIMIT((!current_is_reclaimer() && PageTail(page)), "trying to isolate tail page");
-#else
-	WARN_RATELIMIT(PageTail(page), "trying to isolate tail page");
-#endif
+	if (PageTail(page))
+		pr_err_ratelimited("trying to isolate tail page");
 
 	if (PageLRU(page)) {
 		struct zone *zone = page_zone(page);
