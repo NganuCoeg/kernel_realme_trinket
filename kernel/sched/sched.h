@@ -2095,7 +2095,7 @@ static inline unsigned long __cpu_util(int cpu)
 	unsigned int util;
 
 #ifdef CONFIG_SCHED_WALT
-	if (likely(!walt_disabled && sysctl_sched_use_walt_cpu_util)) {
+	if (!walt_disabled && sysctl_sched_use_walt_cpu_util) {
 		u64 walt_cpu_util =
 			cpu_rq(cpu)->walt_stats.cumulative_runnable_avg_scaled;
 
