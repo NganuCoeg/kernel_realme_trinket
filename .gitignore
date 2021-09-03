@@ -39,6 +39,7 @@
 *.symtypes
 *.tar
 *.xz
+*.zip
 Module.symvers
 modules.builtin
 
@@ -54,6 +55,9 @@ modules.builtin
 /vmlinuz
 /System.map
 /Module.markers
+/out
+/clang
+/AnyKernel3
 
 #
 # RPM spec file (make rpm-pkg)
@@ -131,3 +135,4 @@ kernel/configs/android-*.cfg
 #Ignoring Android.bp link file
 #
 Android.bp
+log.txt
