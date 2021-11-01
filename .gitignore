@@ -58,6 +58,7 @@ modules.builtin
 /out
 /clang
 /AnyKernel3
+/any
 
 #
 # RPM spec file (make rpm-pkg)
