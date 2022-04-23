@@ -4,7 +4,7 @@ git clone --depth=1 https://github.com/NganuCoeg/kernel_realme_trinket -b dev RM
 git clone --depth=1 https://github.com/kdrag0n/proton-clang clang
 
 # Main
-KERNEL_NAME=ChindoWangy # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=BlackHeart # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/RMX1911 # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=RMX1911 # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=vendor/RMX1911_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
