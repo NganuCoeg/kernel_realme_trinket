@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone --depth=1 https://github.com/NganuCoeg/kernel_realme_trinket -b dev RMX1911
+git clone --depth=1 https://github.com/NganuCoeg/kernel_realme_trinket -b solo RMX1911
 git clone --depth=1 https://github.com/kdrag0n/proton-clang clang
 
 # Main
