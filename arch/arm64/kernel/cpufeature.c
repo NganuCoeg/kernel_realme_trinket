@@ -1206,25 +1206,6 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
 		.min_field_value = 1,
 	},
 #endif
-#ifdef CONFIG_ARM64_HW_AFDBM
-	{
-		/*
-		 * Since we turn this on always, we don't want the user to
-		 * think that the feature is available when it may not be.
-		 * So hide the description.
-		 *
-		 * .desc = "Hardware pagetable Dirty Bit Management",
-		 *
-		 */
-		.capability = ARM64_HW_DBM,
-		.sys_reg = SYS_ID_AA64MMFR1_EL1,
-		.sign = FTR_UNSIGNED,
-		.field_pos = ID_AA64MMFR1_HADBS_SHIFT,
-		.min_field_value = 2,
-		.matches = has_hw_dbm,
-		.cpu_enable = cpu_enable_hw_dbm,
-	},
-#endif
 #ifdef CONFIG_ARM64_SSBD
 	{
 		.desc = "Speculative Store Bypassing Safe (SSBS)",
