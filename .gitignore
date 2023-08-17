@@ -131,3 +131,10 @@ kernel/configs/android-*.cfg
 #Ignoring Android.bp link file
 #
 Android.bp
+
+# Ignore the build dir
+out
+clang
+log.txt
+gcc
+gcc32
